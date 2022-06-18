@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text , StyleSheet } from 'react-native';
+import { ButtonComponent } from './components/Buttons';
 
 const Main = () => {
     return (
@@ -7,6 +8,10 @@ const Main = () => {
             <Text style={styles.text}>
                 Hello Dev 👽
             </Text>
+            <ButtonComponent
+                title='Entrar'
+                onPress={()=> {} }
+            />
         </View>
     )
 }
@@ -18,7 +23,8 @@ const styles = StyleSheet.create({
         flex:1,
 
         justifyContent:'center',
-        alignItems:'center'
+        alignItems:'center',
+        paddingHorizontal:20,
     },
     text: {
         fontWeight:'bold'
