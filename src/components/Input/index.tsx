@@ -2,16 +2,22 @@ import React from 'react';
 import { View, TextInput, Text, TouchableOpacity } from 'react-native';
 import { IInputProps } from './index.d';
 
+import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles';
 
 const InputComponent:React.FC<IInputProps> = props => {
     const {  
         label,
+        showPassword,
+        setShowPassword,
         leftElement:LeftComponent, 
         rightElement:RightComponent,
         error 
     } = props;
 
+    const handleShowPassword = () => {
+        setShowPassword(!showPassword);
+    }
 
     return (
         <>
@@ -19,7 +25,7 @@ const InputComponent:React.FC<IInputProps> = props => {
         <View style={styles.container}>
             {LeftComponent && 
                 <View style={styles.leftContent}>
-                    <Text></Text>
+                    <Icon name='user' color='black' size={24} />
                 </View>
             }
             <TextInput 
@@ -35,8 +41,15 @@ const InputComponent:React.FC<IInputProps> = props => {
                 ]}
             />
             {RightComponent && 
-                <TouchableOpacity style={styles.rightContent}>
-                    <Text></Text>
+                <TouchableOpacity 
+                    style={styles.rightContent}
+                    onPress={handleShowPassword}
+                >
+                   {
+                       showPassword
+                            ? <Icon name="eye" color="black" size={24}/>
+                            : <Icon name="eye-slash" color="black" size={24}/>
+                   }
                 </TouchableOpacity>
             }
         </View>

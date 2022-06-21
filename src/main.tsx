@@ -5,6 +5,7 @@ import { InputComponent } from './components/Input';
 
 const Main = () => {
     const [text, setText] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
 
     return (
         <View style={styles.container}>
@@ -14,7 +15,10 @@ const Main = () => {
             <InputComponent
                 value={text}
                 onChangeText={(text)=> setText(text)}
-                leftElement={()=> <View><Text>teste</Text></View>}
+                showPassword={showPassword}
+                setShowPassword={setShowPassword}
+                leftElement
+                rightElement
             />
         </View>
     )
