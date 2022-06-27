@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { COLORS } from '../../themes/colors';
 
 const styles = StyleSheet.create({
     container:{
@@ -10,6 +11,8 @@ const styles = StyleSheet.create({
 
         marginVertical:10,
         borderRadius:4,
+        borderWidth:2,
+        borderColor:COLORS.primary
     },
     title:{
         fontSize:16
