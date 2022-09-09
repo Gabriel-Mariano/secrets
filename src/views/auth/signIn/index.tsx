@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { View, Text, SafeAreaView, Image, TouchableWithoutFeedback } from 'react-native';
 import { ButtonComponent } from '../../../components/Buttons';
 import { InputComponent } from '../../../components/Input';
+import { SvgUri } from 'react-native-svg';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
-import Logo from '../../../assets/identidadeVisual_dark.png';
+import Logo from '../../../assets/identidadeVisual_dark.svg';
 import styles from './styles';
 import { COLORS } from '../../../themes/colors';
 
@@ -30,7 +31,9 @@ const SignInScreen = () => {
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.content}>
-                <Image source={Logo} style={styles.logo}/>
+                {/* <Image source={Logo} style={styles.logo}/> */}
+                <Logo fill='#311313' width="230" height="30" />
+                
                 <InputComponent
                     value={email}
                     onChangeText={(text)=> setEmail(text)}
