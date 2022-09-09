@@ -3,9 +3,22 @@ import { View, Text, TouchableHighlight, Alert } from 'react-native';
 import TouchID from 'react-native-touch-id';
 import ReactNativeBiometrics from 'react-native-biometrics';
 import styles from './styles';
+import Select from '../../../components/Select';
 
 const HomeScreen = () => {
     const [supported, setSupported] = useState(null);
+    const [langSelected, setLangSelected] = useState('');
+
+    const languages = [
+        {
+            id:'1',
+            lang:'JavaScript'
+        },
+        {
+            id:'2',
+            lang:'Python'
+        }
+    ]
 
     useEffect(()=> {
         // TouchID.isSupported()
@@ -58,11 +71,13 @@ const HomeScreen = () => {
 
     return (
         <View style={styles.container}>
-           <TouchableHighlight onPress={handleTouch}>
-                <Text>
-                    Authenticate with Touch ID
-                </Text>
-            </TouchableHighlight>
+            <Select 
+                label='Linguagens de programação:'
+                placeholder='Selecione uma linguagem ...'
+                options={languages}
+                value={langSelected}
+                onChangeSelect={(item)=> setLangSelected(item.lang)}
+            />
         </View>
     )
 }

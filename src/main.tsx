@@ -6,7 +6,7 @@ import { AppRoutes, MyDrawer } from './routes/route';
 
 const Main = () => {
     return (
-        <MyDrawer/>
+        <AppRoutes/>
     )
 }
 
