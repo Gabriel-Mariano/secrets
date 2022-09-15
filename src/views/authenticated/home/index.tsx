@@ -72,7 +72,7 @@ const HomeScreen = () => {
     return (
         <View style={styles.container}>
             <Select 
-                label='Linguagens de programação:'
+                label='Linguagens: Programação'
                 placeholder='Selecione uma linguagem ...'
                 options={languages}
                 value={langSelected}
